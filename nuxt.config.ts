@@ -2,7 +2,7 @@
 // @ts-ignore
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   typescript: {
     strict: false,
     typeCheck: false,
@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     transpile: ['three']
   },
   nitro: {
-    preset: 'vercel'
+    preset: 'vercel-edge'
+  },
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Earth 3D Visualization'
+    }
+  },
+  experimental: {
+    payloadExtraction: false
   }
 })
