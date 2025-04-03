@@ -12,16 +12,34 @@ export default defineNuxtConfig({
     transpile: ['three']
   },
   nitro: {
-    preset: 'vercel-edge'
+    preset: 'vercel-edge',
+    serveStatic: true
   },
   app: {
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Earth 3D Visualization'
+      title: 'Earth 3D Visualization',
+      meta: [
+        { name: 'format-detection', content: 'telephone=no' }
+      ]
+    },
+    // @ts-ignore
+    cdnURL: process.env.NUXT_PUBLIC_CDN_URL || ''
+  },
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+      rollupOptions: {
+        output: {
+          format: 'es'
+        }
+      }
     }
   },
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
+    inlineSSRStyles: false,
+    renderJsonPayloads: true
   }
 })
