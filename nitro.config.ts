@@ -1,6 +1,6 @@
 // @ts-ignore
 export default defineNitroConfig({
-  preset: 'vercel-edge',
+  preset: 'vercel',
   serveStatic: true,
   routeRules: {
     '/_nuxt/**': {
