@@ -1047,6 +1047,7 @@ function createImpactEffect(position: THREE.Vector3) {
     
     explosionSizes[i] = Math.random() * 0.2 + 0.05;
     
+    const color = colors[Math.floor(Math.random() * colors.length)];
     explosionColors[i * 3] = color.r;
     explosionColors[i * 3 + 1] = color.g;
     explosionColors[i * 3 + 2] = color.b;
