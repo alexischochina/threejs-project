@@ -1,0 +1,10 @@
+.nuxt/
+node_modules/
+.git/
+.github/
+.vscode/
+.idea/
+dist/
+.output/
+*.log
+.DS_Store 
